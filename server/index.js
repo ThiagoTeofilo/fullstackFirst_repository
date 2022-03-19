@@ -2,11 +2,16 @@ require("dotenv").config()
 
 const express = require("express")
 const connectDB = require("./database/connection")
+const bodyparser = require("body-parser")
+const cors = require('cors')
 const app = express()
 
 // forma de ler json / middlewares
-app.use(express.urlencoded({extended: true}))
+// app.use(express.urlencoded({extended: true}))
+app.use(bodyparser.urlencoded({extended: true}))
 app.use(express.json())
+
+app.use(cors())
 
 // rotas
 const inicialRouter = require("./routes/inicial")

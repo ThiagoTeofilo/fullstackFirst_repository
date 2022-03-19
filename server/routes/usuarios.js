@@ -22,7 +22,7 @@ router.get("/:id", getUsuario, (req, res) => {
 })
 
 //creating one
-router.post("/", async (req, res) => {
+router.post("/api/insert", async (req, res) => {
     const usuario = new Usuario({
         nome: req.body.nome,
         senha: req.body.senha
